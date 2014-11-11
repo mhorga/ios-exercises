@@ -26,23 +26,16 @@
 
 - (NSArray *) alphabeticallySortedStarTrekCharactersFromArray:(NSArray *)characterArray {
     /* WORK HERE */
-    NSMutableArray *myArray = [characterArray mutableCopy];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:nil ascending:YES];
-    [myArray sortUsingDescriptors:@[sortDescriptor]];
-    
-    return myArray;
+
+    return [characterArray sortedArrayUsingDescriptors:@[sortDescriptor]];
 }
 
 - (BOOL) characterArrayContainsWorf:(NSArray *)characterArray {
     /* WORK HERE */
-    NSMutableArray *myArray = [characterArray mutableCopy];
     NSPredicate *contains = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] 'Worf'"];
-    [myArray filterUsingPredicate:contains];
-    BOOL containsWorf = YES;
-    if (myArray.count == 0) {
-        containsWorf = NO;
-    }
-    return containsWorf;
+
+    return [characterArray filteredArrayUsingPredicate:contains].count > 0;
 }
 
 @end
