@@ -26,6 +26,10 @@
  
  */
 
+@property (nonatomic, strong) NSMutableArray *arrayRemembered;
+@property (nonatomic, copy) NSMutableArray *arrayCopied;
+@property (nonatomic, strong) NSNumber *floatRemembered;
+
 /**
  Indicates a mutable array to remember for later.
  
